@@ -214,7 +214,7 @@
     "company": "@adorsys",
     "twitter": null,
     "location": "Cameroon",
-    "contributions": 655,
+    "contributions": 655, 
     "invited": false,
     "invitation_date": null,
     "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
