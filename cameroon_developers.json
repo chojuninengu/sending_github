@@ -214,7 +214,7 @@
     "company": "@adorsys",
     "twitter": null,
     "location": "Cameroon",
-    "contributions": 655,  
+    "contributions": 655,
     "invited": false,
     "invitation_date": null,
     "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
@@ -666,8 +666,8 @@
     "twitter": null,
     "location": "DOUALA 5eme",
     "contributions": 172,
-    "invited": false,
-    "invitation_date": null,
+    "invited": true,
+    "invitation_date": "2025-04-24 14:58:02",
     "invitation_error": null
   },
   {
@@ -679,7 +679,7 @@
     "contributions": 170,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Hyogan",
@@ -688,8 +688,8 @@
     "twitter": null,
     "location": "cameroon",
     "contributions": 168,
-    "invited": false,
-    "invitation_date": null,
+    "invited": true,
+    "invitation_date": "2025-04-24 15:03:11",
     "invitation_error": null
   },
   {
@@ -701,7 +701,7 @@
     "contributions": 163,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Daniel-TheProgrammer",
@@ -710,8 +710,8 @@
     "twitter": null,
     "location": "Douala, Cameroon",
     "contributions": 161,
-    "invited": false,
-    "invitation_date": null,
+    "invited": true,
+    "invitation_date": "2025-04-24 15:08:17",
     "invitation_error": null
   },
   {
@@ -723,7 +723,7 @@
     "contributions": 161,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Jspascal",
@@ -734,7 +734,7 @@
     "contributions": 154,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Laureoby",
@@ -745,7 +745,7 @@
     "contributions": 154,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "jordanNdjock",
@@ -756,7 +756,7 @@
     "contributions": 152,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "AndersonKamsong",
@@ -767,7 +767,7 @@
     "contributions": 151,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Rushclin",
@@ -778,7 +778,7 @@
     "contributions": 149,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "ngdream",
@@ -789,7 +789,7 @@
     "contributions": 148,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Mimi97-aqua",
@@ -798,8 +798,8 @@
     "twitter": null,
     "location": "Yaound\u00e9, Cameroon",
     "contributions": 142,
-    "invited": false,
-    "invitation_date": null,
+    "invited": true,
+    "invitation_date": "2025-04-24 15:43:32",
     "invitation_error": null
   },
   {
@@ -811,7 +811,7 @@
     "contributions": 141,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "alfredmouelle",
@@ -822,7 +822,7 @@
     "contributions": 138,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Real-Music",
@@ -833,7 +833,7 @@
     "contributions": 134,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Ndzenyuy",
@@ -844,7 +844,7 @@
     "contributions": 132,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Figeral",
@@ -855,7 +855,7 @@
     "contributions": 132,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Shalom2935",
@@ -866,7 +866,7 @@
     "contributions": 128,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "haruna-rashid-yakubu",
@@ -877,7 +877,7 @@
     "contributions": 128,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "tegha-romeo",
@@ -888,7 +888,7 @@
     "contributions": 127,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "JaysonWhite13",
@@ -899,7 +899,7 @@
     "contributions": 125,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Favourez",
@@ -910,7 +910,7 @@
     "contributions": 124,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "YannKamche",
@@ -921,7 +921,7 @@
     "contributions": 121,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "pacolahd",
@@ -932,7 +932,7 @@
     "contributions": 121,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "7H3XXX",
@@ -943,7 +943,7 @@
     "contributions": 120,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "Shermine237",
@@ -952,8 +952,8 @@
     "twitter": null,
     "location": "Douala, Cameroon",
     "contributions": 120,
-    "invited": false,
-    "invitation_date": null,
+    "invited": true,
+    "invitation_date": "2025-04-24 16:49:09",
     "invitation_error": null
   },
   {
@@ -963,8 +963,8 @@
     "twitter": null,
     "location": "Yaounde, Cameroon",
     "contributions": 119,
-    "invited": false,
-    "invitation_date": null,
+    "invited": true,
+    "invitation_date": "2025-04-24 16:49:15",
     "invitation_error": null
   },
   {
@@ -976,7 +976,7 @@
     "contributions": 119,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "ivancornut",
@@ -987,7 +987,7 @@
     "contributions": 119,
     "invited": false,
     "invitation_date": null,
-    "invitation_error": null
+    "invitation_error": "422 {\"message\": \"Validation Failed\", \"errors\": [{\"resource\": \"RepositoryInvitation\", \"code\": \"custom\", \"field\": \"rate_limit\", \"message\": \"rate_limit exceeded\"}], \"documentation_url\": \"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\", \"status\": \"422\"}"
   },
   {
     "username": "xennia316",
