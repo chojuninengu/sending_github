@@ -3,7 +3,7 @@
 This script helps you find Cameroonian developers on GitHub and gather their information. It uses the GitHub API to search for users with Cameroon-related information in their profiles.
 
 ## Prerequisites
-
+ 
 - Python 3.7 or higher
 - GitHub Personal Access Token with appropriate permissions
 
