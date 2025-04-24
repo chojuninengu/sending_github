@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GitHub Actions script to invite Cameroonian developers to the repository.
+GitHub Actions script to invite Cameroonian developers to join a GitHub organization.
 This script is designed to run in a GitHub Actions workflow.
 """
 
@@ -10,9 +10,9 @@ import json
 import re
 from github import Github
 
-# Repository details
-REPO_OWNER = "chojuninengu"  # Your GitHub username
-REPO_NAME = "cameroon-developer-network"  # Your repository name
+# Organization details
+ORG_NAME = "cameroon-developers"  # Your GitHub organization name
+ROLE = "member"  # Role to assign: member, admin, or billing_manager
 
 # Configuration
 BATCH_SIZE = 30  # Number of invitations to send in one batch
@@ -92,17 +92,17 @@ def save_invitation_records(records):
     with open(filename, 'w') as f:
         json.dump(records, f, indent=2)
 
-def send_invitations():
+def send_organization_invitations():
     """
-    Send invitations to join the repository to developers who haven't been invited yet
+    Send invitations to join the GitHub organization to developers who haven't been invited yet
     """
     try:
         # Initialize GitHub client
         github_token = os.environ.get('GITHUB_TOKEN')
         g = Github(github_token)
         
-        # Get the repository
-        repo = g.get_user(REPO_OWNER).get_repo(REPO_NAME)
+        # Get the organization
+        org = g.get_organization(ORG_NAME)
         
         # Load existing invitation records
         invitation_records = load_invitation_records()
@@ -132,20 +132,20 @@ def send_invitations():
                 # Create a personalized message
                 message = f"""Hi {dev['name'] or dev['username']},
 
-I noticed you're a developer from Cameroon and wanted to invite you to join the Cameroon Developer Network on GitHub.
+I noticed you're a developer from Cameroon and wanted to invite you to join the Cameroon Developers organization on GitHub.
 
 This is a community-driven initiative to connect, support, and empower Cameroonian developers worldwide. Whether you're a beginner, intermediate, or professional developer, this is your space to grow, collaborate, and contribute to the tech ecosystem in Cameroon.
 
-Repository: https://github.com/{REPO_OWNER}/{REPO_NAME}
+Organization: https://github.com/{ORG_NAME}
 
 Let's build something meaningful together!
 
 Best regards,
-The Cameroon Developer Network Team
+The Cameroon Developers Team
 """
                 
-                # Send invitation
-                repo.add_to_collaborators(username, permission='push')
+                # Send organization invitation
+                org.invite_user(username, role=ROLE)
                 
                 # Update the invitation record
                 invitation_records[username] = {
@@ -156,7 +156,7 @@ The Cameroon Developer Network Team
                     'invitation_error': None
                 }
                 
-                print(f"Invitation sent to {username}")
+                print(f"Organization invitation sent to {username}")
                 total_invited += 1
                 
                 # Add a delay to avoid rate limiting
@@ -191,6 +191,6 @@ The Cameroon Developer Network Team
         print(f"Error sending invitations: {str(e)}")
 
 if __name__ == "__main__":
-    print("Starting invitation process for Cameroonian developers...")
-    send_invitations()
+    print("Starting organization invitation process for Cameroonian developers...")
+    send_organization_invitations()
     print("Invitation process completed!") 
