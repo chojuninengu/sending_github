@@ -7,7 +7,7 @@ This is where we list all the amazing Cameroonian developers who are part of our
 1. Fork this repository
 2. Add your information in the format below
 3. Create a Pull Request
- 
+
 ## Template
 
 ```markdown

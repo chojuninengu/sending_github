@@ -4,7 +4,7 @@
 
 This is a community-driven initiative to connect, support, and empower Cameroonian developers worldwide. Whether you're a beginner, intermediate, or professional developer, this is your space to grow, collaborate, and contribute to the tech ecosystem in Cameroon.
 
-## 🚀 Our Mission  
+## 🚀 Our Mission 
 
 - Build a strong network of Cameroonian developers
 - Share knowledge, projects, and opportunities
