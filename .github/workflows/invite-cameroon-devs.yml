@@ -1,4 +1,4 @@
-name: Invite Cameroonian Developers
+name: Invite Cameroonian Developers to Organization
 
 on:
   schedule:
@@ -10,12 +10,6 @@ on:
 jobs:
   invite-developers:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      repository-projects: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -43,7 +37,7 @@ jobs:
 
       - name: Run invitation script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
         run: python .github/scripts/invite_cameroon_devs.py
 
       - name: Commit changes
