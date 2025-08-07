@@ -26,12 +26,12 @@ jobs:
 
       - name: Install GitHub CLI
         run: |
-          type -p curl >/dev/null || sudo apt update && sudo apt install curl -y
-          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-          sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-          sudo apt update
-          sudo apt install gh -y
+          # Ensure curl is installed
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          # Download and install the latest gh Debian package
+          curl -fsSL https://github.com/cli/cli/releases/latest/download/gh_$(curl -s https://api.github.com/repos/cli/cli/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -c 2-)_linux_amd64.deb -o gh.deb
+          sudo dpkg -i gh.deb
+          rm gh.deb
 
       - name: Verify token permissions
         env:
@@ -62,7 +62,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout -b feature/invitations-$(date +%s)
           git add data/
-          git commit -m "Update invitation records" -a || echo "No changes to commit"
+          git commit -m "Update invitation records and developer data" -a || echo "No changes to commit"
           git push origin feature/invitations-$(date +%s)
           echo "BRANCH_NAME=feature/invitations-$(date +%s)" >> $GITHUB_ENV
 
@@ -71,6 +71,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH_NAME }}
-          title: "Update invitation records"
-          body: "Automated update of invitation records from Cameroon developers list"
-          commit-message: "Update invitation records"
+          title: "Update invitation records and developer data"
+          body: "Automated update of invitation records and cameroon_developers.json from Cameroon developers list"
+          commit-message: "Update invitation records and developer data"
