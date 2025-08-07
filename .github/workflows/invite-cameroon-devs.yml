@@ -2,9 +2,7 @@ name: Invite Cameroonian Developers to Organization
 
 on:
   schedule:
-    # Run every 3 days at 00:00 UTC
     - cron: "0 0 */3 * *"
-  # Allow manual triggering
   workflow_dispatch:
 
 jobs:
@@ -35,15 +33,24 @@ jobs:
         run: |
           curl -o data/cameroon.md https://raw.githubusercontent.com/gayanvoice/top-github-users/main/markdown/public_contributions/cameroon.md
 
+      - name: Verify token permissions
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
+        run: |
+          gh repo view chojuninengu/sending_github || echo "Token lacks access to repository"
+
       - name: Run invitation script
         env:
           GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
         run: python .github/scripts/invite_cameroon_devs.py
 
       - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git checkout -b feature/invitations-$(date +%s)
           git add data/
           git commit -m "Update invitation records" -a || echo "No changes to commit"
-          git push
+          git push origin feature/invitations-$(date +%s)
