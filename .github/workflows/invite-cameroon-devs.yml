@@ -24,6 +24,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyGithub requests
 
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt update
+          sudo apt install gh
+
+      - name: Verify token permissions
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
+        run: |
+          gh auth status
+          gh repo view chojuninengu/sending_github || echo "Token lacks access to repository"
+
       - name: Create directories
         run: |
           mkdir -p data
@@ -33,12 +47,6 @@ jobs:
         run: |
           curl -o data/cameroon.md https://raw.githubusercontent.com/gayanvoice/top-github-users/main/markdown/public_contributions/cameroon.md
 
-      - name: Verify token permissions
-        env:
-          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
-        run: |
-          gh repo view chojuninengu/sending_github || echo "Token lacks access to repository"
-
       - name: Run invitation script
         env:
           GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
@@ -46,7 +54,7 @@ jobs:
 
       - name: Commit changes
         env:
-          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -54,3 +62,13 @@ jobs:
           git add data/
           git commit -m "Update invitation records" -a || echo "No changes to commit"
           git push origin feature/invitations-$(date +%s)
+          echo "BRANCH_NAME=feature/invitations-$(date +%s)" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          title: "Update invitation records"
+          body: "Automated update of invitation records from Cameroon developers list"
+          commit-message: "Update invitation records"
