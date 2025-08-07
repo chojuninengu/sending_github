@@ -24,6 +24,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyGithub requests
 
+      - name: Install GitHub CLI
+        run: |
+          # Ensure curl is installed
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          # Download and install the latest gh Debian package
+          curl -fsSL https://github.com/cli/cli/releases/latest/download/gh_$(curl -s https://api.github.com/repos/cli/cli/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -c 2-)_linux_amd64.deb -o gh.deb
+          sudo dpkg -i gh.deb
+          rm gh.deb
+
+      - name: Verify token permissions
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
+        run: |
+          gh auth status
+          gh repo view chojuninengu/sending_github || echo "Token lacks access to repository"
+
       - name: Create directories
         run: |
           mkdir -p data
