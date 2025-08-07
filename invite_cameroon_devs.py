@@ -1,20 +1,18 @@
 import os
-import time 
+import time
 import json
 import re
-from github import Github
-from dotenv import load_dotenv
- 
-# Load environment variables
-load_dotenv()
+from github import Github, GithubException
 
 # Initialize GitHub client
 github_token = os.getenv('GITHUB_TOKEN')
+if not github_token:
+    raise ValueError("GITHUB_TOKEN environment variable not set")
 g = Github(github_token)
 
 # Repository details
-REPO_OWNER = "chojuninengu"  # Your GitHub username
-REPO_NAME = "cameroon-developer-network"  # Your repository name
+REPO_OWNER = "chojuninengu"
+REPO_NAME = "sending_github"  # Corrected repository name
 
 # Configuration
 BATCH_SIZE = 30  # Number of invitations to send in one batch
@@ -23,9 +21,9 @@ DELAY_BETWEEN_BATCHES = 3600  # Seconds to wait between batches (1 hour)
 
 def extract_developers_from_md():
     """
-    Extract developer information from the cameroon.md file
+    Extract developer information from data/cameroon.md
     """
-    filename = 'cameroon.md'
+    filename = 'data/cameroon.md'  # Corrected file path
     if not os.path.exists(filename):
         print(f"Error: {filename} not found!")
         return []
@@ -71,6 +69,7 @@ def extract_developers_from_md():
             
     except Exception as e:
         print(f"Error extracting developers from {filename}: {str(e)}")
+        raise
         
     return developers
 
@@ -78,7 +77,8 @@ def save_developers(developers):
     """
     Save developer information to a JSON file
     """
-    filename = 'cameroon_developers.json'
+    filename = 'data/cameroon_developers.json'  # Save in data/ directory
+    os.makedirs('data', exist_ok=True)  # Ensure data/ directory exists
     
     # Load existing data if file exists
     existing_data = []
@@ -98,7 +98,7 @@ def save_developers(developers):
     with open(filename, 'w') as f:
         json.dump(existing_data, f, indent=2)
         
-    print(f"Saved {len(developers)} developers to {filename}")
+    print(f"Saved {len(existing_data)} developers to {filename}")
 
 def send_invitations_in_batches():
     """
@@ -108,9 +108,10 @@ def send_invitations_in_batches():
     try:
         # Get the repository
         repo = g.get_user(REPO_OWNER).get_repo(REPO_NAME)
+        print(f"Successfully accessed repository: {REPO_OWNER}/{REPO_NAME}")
         
         # Load existing data
-        filename = 'cameroon_developers.json'
+        filename = 'data/cameroon_developers.json'
         if not os.path.exists(filename):
             print("No developers found. Run the extraction first.")
             return
@@ -173,15 +174,21 @@ The Cameroon Developer Network Team
                     # Add a delay to avoid rate limiting
                     time.sleep(DELAY_BETWEEN_INVITATIONS)
                     
-                except Exception as e:
+                except GithubException as e:
                     error_message = str(e)
                     print(f"Error sending invitation to {dev['username']}: {error_message}")
                     dev['invitation_error'] = error_message
                     
                     # If we hit a rate limit, pause for a while
-                    if "rate_limit" in error_message.lower():
+                    if e.status == 403 and "rate limit" in error_message.lower():
                         print("Rate limit detected. Pausing for 5 minutes...")
                         time.sleep(300)  # Wait 5 minutes
+                    elif e.status == 403:
+                        print("Permission error. Check if ORG_ADMIN_TOKEN has admin:org scope.")
+                        raise  # Fail the workflow to diagnose permission issues
+                    elif e.status == 404:
+                        print(f"User {dev['username']} not found or repository inaccessible.")
+                        continue
                     
                     continue
                     
@@ -198,28 +205,25 @@ The Cameroon Developer Network Team
                 
         print(f"\nInvitation process completed! Total invitations sent: {total_invited}")
         
-    except Exception as e:
-        print(f"Error sending invitations: {str(e)}")
+    except GithubException as e:
+        print(f"Error accessing repository or sending invitations: {str(e)}")
+        raise
 
 def main():
     """
     Main function to run the script
     """
-    print("Extracting Cameroonian developers from cameroon.md...")
+    print("Extracting Cameroonian developers from data/cameroon.md...")
     developers = extract_developers_from_md()
     
     if developers:
         print(f"Found {len(developers)} Cameroonian developers")
         save_developers(developers)
-        
-        # Ask if user wants to send invitations
-        send_inv = input("\nDo you want to send invitations to these developers? (y/n): ")
-        if send_inv.lower() == 'y':
-            print("\nSending invitations in batches to respect GitHub's rate limits...")
-            send_invitations_in_batches()
-            print("\nInvitation process completed!")
+        print("\nSending invitations in batches to respect GitHub's rate limits...")
+        send_invitations_in_batches()
+        print("\nInvitation process completed!")
     else:
         print("No developers found in the markdown file.")
 
 if __name__ == "__main__":
-    main() 
+    main()
